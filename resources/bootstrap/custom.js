@@ -1,39 +1,39 @@
 $(document).ready(
-   function() {
-   	// body...
-
+   function(){
    $('#regisform').submit(function(event){
 
         event.preventDefault();
         var myFormData={
         	username: $('#username').val(),
         	password: $('#password').val()
-                
+                 }
 
-
-        }
+                // console.log(myFormData);
 
 $.ajax({
 
-	url: 'https/localhost:3000/v1/users',
+	url: 'http://localhost:3001/v1/users',
 	method: 'POST',
 	contentType: 'application/json',
 	data: JSON.stringify(myFormData),
 
 
 
-	sucsscess :function(result,status){
-      
+	success :function(result,status){
+      console.log(result);
 	},
 
 	error:function(jqXHR,status) {
+    console.log(status);
 
 	}
+
+
 })    
 
 
    })
 
-   }
+   })
 
-	)
+	
